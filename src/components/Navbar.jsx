@@ -3,11 +3,13 @@ import * as React from "react";
 import { AppBar, AppBarSection } from "@progress/kendo-react-layout";
 import { SvgIcon } from "@progress/kendo-react-common";
 import SearchOverlay from "./SearchOverlay";
-import { cartIcon, heartIcon, userIcon } from "@progress/kendo-svg-icons";
+import { userIcon } from "@progress/kendo-svg-icons";
+import ShopCart from "./ShopCart";
+import WishList from "./WishList";
 
 const Navbar = () => {
   return (
-    <div>
+    <div className="d-flex justify-content-center main-bar">
       <AppBar className="navbar navbar-expand-lg bg-light-subtle d-flex justify-content-between">
         <AppBarSection>
           <a className="navbar-brand" href="#">
@@ -51,18 +53,10 @@ const Navbar = () => {
 
         <AppBarSection>
           <div className="grid gap-3 d-flex">
-            <SearchOverlay />
-            <div className="p-2 g-col-6">
-              <a href="" className="nav-icon">
-                <SvgIcon icon={heartIcon} size="large" />
-              </a>
-            </div>
-            <div className="p-2 g-col-6 text-black">
-              <a href="" className="nav-icon">
-                <SvgIcon icon={cartIcon} size="large" />
-              </a>
-            </div>
-            <div className="p-2 g-col-6 text-black">
+            <SearchOverlay/>
+            <WishList/>
+            <ShopCart/>
+            <div className="p-1 g-col-6 text-black">
               <a href="" className="nav-icon">
                 <SvgIcon icon={userIcon} size="large" />
               </a>

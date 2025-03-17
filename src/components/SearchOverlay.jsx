@@ -14,7 +14,7 @@ const SearchOverlay = () => {
   };
 
   return (
-    <div className="p-2 g-col-6">
+    <div className="p-1 g-col-6">
       <a href="#" className="nav-icon" onClick={onClick}>
         <SvgIcon icon={searchIcon} size="large" />
       </a>

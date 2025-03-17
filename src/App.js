@@ -13,9 +13,8 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulating an API/data loading process
     setTimeout(() => {
-      setLoading(false); // Hide loader after 3 seconds
+      setLoading(false); 
     }, 3000);
   }, []);
 
