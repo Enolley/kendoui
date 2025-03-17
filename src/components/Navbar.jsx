@@ -1,9 +1,12 @@
 import React from 'react'
+import { SvgIcon } from "@progress/kendo-react-common";
+import SearchOverlay from './SearchOverlay';
+import { cartIcon, heartIcon, searchIcon, userIcon } from "@progress/kendo-svg-icons";
 
 const Navbar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg bg-light-subtle">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             Navbar
@@ -19,8 +22,11 @@ const Navbar = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+          <div
+            className="collapse navbar-collapse d-flex justify-content-center"
+            id="navbarSupportedContent"
+          >
+            <ul className="navbar-nav">
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="#">
                   Home
@@ -70,17 +76,25 @@ const Navbar = () => {
                 </a>
               </li>
             </ul>
-            <form class="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
+          </div>
+
+          <div className="grid gap-3 d-flex">
+            <SearchOverlay />
+            <div className="p-2 g-col-6">
+              <a href="" className="text-black">
+                <SvgIcon icon={heartIcon} size="large" />
+              </a>
+            </div>
+            <div className="p-2 g-col-6 text-black">
+              <a href="" className="text-black">
+                <SvgIcon icon={cartIcon} size="large" />
+              </a>
+            </div>
+            <div className="p-2 g-col-6 text-black">
+              <a href="" className="text-black">
+                <SvgIcon icon={userIcon} size="large" />
+              </a>
+            </div>
           </div>
         </div>
       </nav>
