@@ -4,6 +4,7 @@ import { TextBox } from "@progress/kendo-react-inputs";
 import { searchIcon } from "@progress/kendo-svg-icons";
 import { Button } from "@progress/kendo-react-buttons";
 import { Slide } from "@progress/kendo-react-animation";
+import "@progress/kendo-theme-default/dist/all.css";
 
 const SearchOverlay = () => {
   const [show, setShow] = React.useState(false);
@@ -14,7 +15,7 @@ const SearchOverlay = () => {
 
   return (
     <div className="p-2 g-col-6">
-      <a href="#" className="text-black" onClick={onClick}>
+      <a href="#" className="nav-icon" onClick={onClick}>
         <SvgIcon icon={searchIcon} size="large" />
       </a>
 
@@ -33,7 +34,6 @@ const SearchOverlay = () => {
                   <Button className="search-button">Search</Button>
                 </div>
               </form>
-              {/* Close Button */}
               <Button onClick={onClick} className="close-btn">
                 X
               </Button>
