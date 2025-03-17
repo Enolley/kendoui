@@ -25,3 +25,54 @@
   align-items: center;
   color: white;
 }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.overlay-content {
+  background: white;
+  padding: 20px;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px!important;
+}
+
+.search-form{
+  width: 100%;
+}
+
+.search-button{
+  width: 100%;
+  padding: 7px!important;
+}
+
+.close-btn {
+  background: #930808!important;
+  border: none !important;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute !important;
+  top: 20px !important;
+  right: 20px !important;
+  color: white!important;
+  outline: none!important;
+}
