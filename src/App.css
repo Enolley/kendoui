@@ -112,3 +112,17 @@
 .active{
   color: #ff1053!important;
 }
+.text-prim{
+  color: #FF1053;
+   /* Ensures contrast */
+  
+}
+.text-custom{
+  color:#114b5f;
+}
+.bg-custom{
+  background-color:#FF1053 !important;
+}
+.bg-custom-2{
+  color:#114b5f !important;
+}

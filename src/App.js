@@ -6,6 +6,7 @@ import './App.css';
 import Hero from './components/Hero';
 import ChatAI from './components/ChatAI';
 import ChatWidget from './components/ChatWidget';
+import Catalog from './components/Catalog';
 
 function App() {
   const handleClick = React.useCallback(() => {
@@ -17,6 +18,7 @@ function App() {
       <Navbar/>
       <Hero />
       <ChatWidget/>
+      <Catalog/>    
     </div>
   );
 }

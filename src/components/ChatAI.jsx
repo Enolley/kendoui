@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Input } from '@progress/kendo-react-inputs';
+import { SvgIcon } from '@progress/kendo-react-common';
+import { flipVerticalIcon } from '@progress/kendo-svg-icons';
+import { Button } from "@progress/kendo-react-buttons";
 
 
 function ChatAI() {
@@ -39,7 +42,9 @@ function ChatAI() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <button className="btn btn-success">Send</button>
+        <Button className="btn bg-custom-2">
+         <SvgIcon icon={flipVerticalIcon} size="medium" />
+        </Button>
       </div>
     </div>
   );
