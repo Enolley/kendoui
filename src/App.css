@@ -126,3 +126,13 @@
 .bg-custom-2{
   color:#114b5f !important;
 }
+.loader-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+.custom-loader{
+  color: #ff1053!important;
+}
