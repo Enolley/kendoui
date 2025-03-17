@@ -3,6 +3,9 @@ import Navbar from './components/Navbar';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import './App.css';
+import Hero from './components/Hero';
+import ChatAI from './components/ChatAI';
+import ChatWidget from './components/ChatWidget';
 
 function App() {
   const handleClick = React.useCallback(() => {
@@ -12,6 +15,8 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
+      <Hero />
+      <ChatWidget/>
     </div>
   );
 }
