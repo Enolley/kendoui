@@ -1,24 +1,34 @@
-import * as React from "react";
-
-import { Badge, BadgeContainer } from "@progress/kendo-react-indicators";
-import { SvgIcon } from "@progress/kendo-react-common";
-import { bellIcon} from "@progress/kendo-svg-icons";
+import React, { useState } from "react";
+import "@progress/kendo-theme-default/dist/all.css";
+import { Card, CardBody, CardTitle } from "@progress/kendo-react-layout";
+import { Button } from "@progress/kendo-react-buttons";
+import { Slide } from "@progress/kendo-react-animation";
 
 const Test = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div className="example">
-      <div className="example-wrap" style={{ textAlign: "center" }}>
+    <div className="card-container">
+      <Card
+        className="k-card"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <CardBody>
+          <CardTitle>Card Title</CardTitle>
+          <p>Hover to reveal the button.</p>
+        </CardBody>
 
-        <div className="row">
-          <div className="col-4">
-            <BadgeContainer>
-              <SvgIcon icon={bellIcon} />
-              <Badge themeColor="info">99+</Badge>
-            </BadgeContainer>
-          </div>
-
-        </div>
-      </div>
+        {/* Kendo Fade Animation */}
+        <Slide
+          in={isHovered}
+          transitionEnterDuration={300}
+          transitionExitDuration={200}
+          direction="up"
+        >
+          {isHovered && <Button className="hidden-button">Click Me</Button>}
+        </Slide>
+      </Card>
     </div>
   );
 };

@@ -8,6 +8,7 @@ import ChatAI from "./components/ChatAI";
 import ChatWidget from "./components/ChatWidget";
 import Catalog from "./components/Catalog";
 import PageLoader from "./components/PageLoader";
+import Test from "./components/Test";
 
 function App() {
   const [loading, setLoading] = useState(true);

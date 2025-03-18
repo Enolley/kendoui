@@ -1,7 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap");
 
-*{
+* {
   font-family: "Josefin Sans", sans-serif !important;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .App {
@@ -114,13 +117,14 @@
 }
 .nav-link {
   color: #114b5f;
-  font-size: 20px!important;
+  font-size: 20px !important;
 }
 .nav-link:hover {
   color: #ff1053;
 }
 .active {
   color: #ff1053 !important;
+  border-bottom: 1px solid #ff1053 !important;
 }
 .text-prim {
   color: #ff1053;
@@ -146,17 +150,47 @@
   color: #ff1053 !important;
 }
 
-.navbar{
-  width: 75%!important;
+.navbar {
+  width: 75% !important;
 }
 
-.main-bar{
-  background: linear-gradient(90deg, #ffffff, 
-#e9ecf1)!important;
+.main-bar {
+  background: linear-gradient(90deg, #ffffff, #e9ecf1) !important;
 }
 
-.badge-color{
+.badge-color {
+  background-color: #ff1053 !important;
+  outline: none !important;
+  border: none !important;
+}
+
+.card {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset !important;
+  border: none !important;
+  height: 350px!important;
+}
+
+.btn-custom {
   background-color: #ff1053!important;
-  outline: none!important;
+  color: white!important;
   border: none!important;
+  padding: 10px 20px !important;
+}
+.btn-custom:hover{
+  background: none!important;
+  border: 1px solid #ff1053 !important;
+  color: #ff1053 !important;
+  padding: 9px 19px !important;
+}
+.btn-custom-blue {
+  background-color: #114b5f!important;
+  color: white!important;
+  border: none!important;
+  padding: 10px 20px !important;
+}
+.btn-custom-blue:hover{
+  background: none!important;
+  border: 1px solid #114b5f !important;
+  color: #114b5f !important;
+  padding: 9px 19px !important;
 }
