@@ -1,5 +1,6 @@
 import { Button } from '@progress/kendo-react-buttons'
 import React from 'react'
+import ShopButton from "./ShopButton";
 
 const Action = () => {
   return (
@@ -9,15 +10,8 @@ const Action = () => {
     <h2 className="fs-4 fw-semibold mb-3">
       New Arrivals Just Landed
     </h2>
-    <div className="mt-3">
-      <Button
-        className="btn btn-light text-dark fw-bold px-4 py-2 rounded-pill shadow-sm"
-        
-        aria-label="Shop Now"
-        onClick={(e) => e.preventDefault()}
-      >
-        Shop Now
-      </Button>
+    <div className="mt-3 ">
+      <ShopButton  text="Shop Now"/>
     </div>
   </div>
 </div>

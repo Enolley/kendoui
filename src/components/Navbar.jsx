@@ -6,46 +6,43 @@ import SearchOverlay from "./SearchOverlay";
 import { userIcon } from "@progress/kendo-svg-icons";
 import ShopCart from "./ShopCart";
 import WishList from "./WishList";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div className="d-flex justify-content-center main-bar">
       <AppBar className="navbar navbar-expand-lg bg-light-subtle d-flex justify-content-between">
         <AppBarSection>
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" to="/">
             <h1 className="ms-3 logo">
               <span className="span-logo">i</span>Viatu
             </h1>
-          </a>
+          </Link>
         </AppBarSection>
 
         <AppBarSection>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <Link className="nav-link active" aria-current="page" to="/">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/about">
                   About
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <Link className="nav-link" to="/products">
                   Shop
-                </a>
+                </Link>
               </li>
+              
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Blog
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Contact
-                </a>
+                <Link className="nav-link" to="/contact">
+                  Contact 
+                </Link>
               </li>
             </ul>
           </div>
