@@ -9,6 +9,8 @@ import ChatWidget from "./components/ChatWidget";
 import Catalog from "./components/Catalog";
 import PageLoader from "./components/PageLoader";
 import Test from "./components/Test";
+import Footer from "./components/Footer";
+import Action from "./components/Action";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -29,6 +31,8 @@ function App() {
           <Hero />
           <ChatWidget />
           <Catalog />
+          <Action />
+          <Footer />
         </>
       )}
     </div>
