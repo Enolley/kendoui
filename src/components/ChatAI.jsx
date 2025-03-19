@@ -42,7 +42,7 @@ function ChatAI() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <Button className="btn bg-custom-2">
+        <Button className="btn bg-white">
          <SvgIcon icon={flipVerticalIcon} size="medium" />
         </Button>
       </div>
