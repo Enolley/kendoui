@@ -1,6 +1,6 @@
 import React from "react";
-import { Button } from "@progress/kendo-react-buttons";
 import hero from "../assets/hero.png";
+import ShopButton from "./ShopButton";
 
 const Hero = () => {
   return (
@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="col-12 col-md-3 text-center text-md-start">
         <h1 className="text-custom k-h1 k-font-bold fs-1">Step Up Your Style</h1>
         <p className="k-font-size-lg k-mb-4 text-custom">The Perfect Pair Awaits</p>
-        <Button  className="k-mb-4 btn-custom">Shop Now</Button>
+        <ShopButton text="Shop Now"/>
       </div>
 
       

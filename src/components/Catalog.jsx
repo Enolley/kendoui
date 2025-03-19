@@ -6,6 +6,7 @@ import { cartIcon } from "@progress/kendo-svg-icons";
 import React, { useState } from "react";
 import { Slide } from "@progress/kendo-react-animation";
 import { Button } from "@progress/kendo-react-buttons";
+import ShopButton from "./ShopButton";
 
 const products = [
   { id: 1, name: "Running Shoes", price: "$79", image: hero },
@@ -65,9 +66,7 @@ const Catalog = () => {
           </div>
         ))}
       </div>
-      <Button className="btn btn-custom k-text-center d-flex k-justify-content-center">
-        See More
-      </Button>
+      <ShopButton text="See More"/>
     </div>
   );
 };
