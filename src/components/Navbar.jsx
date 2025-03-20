@@ -6,7 +6,7 @@ import SearchOverlay from "./SearchOverlay";
 import { userIcon } from "@progress/kendo-svg-icons";
 import ShopCart from "./ShopCart";
 import WishList from "./WishList";
-import { Link } from "react-router-dom";
+import { Link ,NavLink} from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -24,25 +24,25 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link className="nav-link active" aria-current="page" to="/">
-                  Home
-                </Link>
+              <NavLink className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`} to="/">
+                Home
+              </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/about">
+              <NavLink className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`} to="/about">
                   About
-                </Link>
+                </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/products">
+                <NavLink className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`} to="/products">
                   Shop
-                </Link>
+                </NavLink>
               </li>
               
               <li className="nav-item">
-                <Link className="nav-link" to="/contact">
+                <NavLink className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}  to="/contact">
                   Contact 
-                </Link>
+                </NavLink>
               </li>
             </ul>
           </div>

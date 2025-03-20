@@ -26,7 +26,9 @@ const ProductList = () => {
     };
 
     fetchProducts();
+    
   }, []);
+  console.log("Products:", products);
 
   return (
     <div className="container mt-5">
@@ -57,7 +59,7 @@ const ProductList = () => {
                   <CardBody className="text-center">
                     <h5 className="card-title">{product.name}</h5>
                     <p className="card-text">${product.price}</p>
-                    <Link to={`/product/${product.id}`} className="btn btn-primary">
+                    <Link to={`/products/${product.id}`} className="btn btn-custom-blue">
                       View Details
                     </Link>
                   </CardBody>

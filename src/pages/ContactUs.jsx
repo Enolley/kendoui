@@ -22,9 +22,9 @@ const ContactUs = () => {
 
   return (
     <div className="container d-flex justify-content-center align-items-center vh-100">
-      <div className="card p-4 shadow-lg w-50">
+      <div className="card p-4 shadow-lg w-75" style={{ maxWidth: "600px" }}>
         <h2 className="text-success text-center mb-4">Contact Us</h2>
-        
+
         <form onSubmit={handleSubmit}>
           {/* Name Field */}
           <div className="mb-3">
@@ -60,16 +60,17 @@ const ContactUs = () => {
             <textarea
               className="form-control"
               name="message"
-              rows="4"
+              rows="5"
               placeholder="Type your message here..."
               value={formData.message}
               onChange={handleChange}
               required
+              style={{ resize: "none" }} // Prevents textarea from resizing
             ></textarea>
           </div>
 
           {/* Submit Button */}
-          <button type="submit" className="btn btn-success w-100">
+          <button type="submit" className="btn btn-custom-blue w-100">
             Send Message
           </button>
         </form>

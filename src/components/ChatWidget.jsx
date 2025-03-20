@@ -15,7 +15,8 @@ function ChatWidget() {
         style={{ bottom: "20px", right: "20px", zIndex: 1000 }}
         onClick={() => setIsOpen(!isOpen)}
       >
-         <SvgIcon icon={commentIcon} size="medium" />
+        
+         <SvgIcon icon={commentIcon} size="large" />
       </Button>
 
       

@@ -1,19 +1,20 @@
-import React from 'react'
+import React from "react";
 import { Button } from "@progress/kendo-react-buttons";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
-const ShopButton = ({text}) => {
+const ShopButton = ({ text }) => {
   const navigate = useNavigate();
   const ToShop = () => {
-    navigate('/products')
-  }
+    navigate("/products");
+  };
+
   return (
-    <div>
-      <Button className="btn btn-custom k-text-center d-flex k-justify-content-center" onClick={ToShop}>
+    <div className="d-flex justify-content-center align-items-center w-100 mt-3">
+      <Button className="btn btn-custom text-center" onClick={ToShop}>
         {text}
       </Button>
     </div>
   );
-}
+};
 
-export default ShopButton
+export default ShopButton;

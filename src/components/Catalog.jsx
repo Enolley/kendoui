@@ -1,4 +1,7 @@
 import hero from "../assets/hero.png";
+
+import sandals from "../assets/sandals.jpg";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Card, CardBody, CardTitle } from "@progress/kendo-react-layout";
 import { SvgIcon } from "@progress/kendo-react-common";
@@ -9,14 +12,14 @@ import { Button } from "@progress/kendo-react-buttons";
 import ShopButton from "./ShopButton";
 
 const products = [
-  { id: 1, name: "Running Shoes", price: "$79", image: hero },
-  { id: 2, name: "Sneakers", price: "$99", image: hero },
-  { id: 3, name: "Loafers", price: "$89", image: hero },
-  { id: 4, name: "Sandals", price: "$49", image: hero },
-  { id: 5, name: "Boots", price: "$129", image: hero },
-  { id: 6, name: "Canvas", price: "$129", image: hero },
-  { id: 7, name: "Slides", price: "$129", image: hero },
-  { id: 8, name: "Akala", price: "$129", image: hero },
+  { id: 1, name: "Running Shoes", price: "$79", image: hero, discount: '40% OFF'},
+  { id: 2, name: "Sneakers", price: "$99", image: hero ,discount: '10% OFF'},
+  { id: 3, name: "Loafers", price: "$89", image: hero  ,discount: '20% OFF'},
+  { id: 4, name: "Sandals", price: "$49", image: sandals,discount: '20% OFF'},
+  { id: 5, name: "Boots", price: "$129", image: hero  ,discount: '40% OFF'},
+  { id: 6, name: "Canvas", price: "$129", image: hero ,discount: '40% OFF'},
+  { id: 7, name: "Slides", price: "$129", image: hero ,discount: '40% OFF'},
+  { id: 8, name: "Akala", price: "$129", image: hero  ,discount: '40% OFF'},
 ];
 
 const Catalog = () => {
@@ -38,6 +41,7 @@ const Catalog = () => {
               onMouseLeave={() => setHoveredCard(null)}
             >
               <CardBody>
+                <span className="text-right text-warning font-weight-bold">{product.discount}</span>
                 <img
                   src={product.image}
                   className="card-img-top"

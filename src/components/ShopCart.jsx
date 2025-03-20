@@ -1,19 +1,23 @@
-import React from 'react'
+import React from "react";
 import { Badge, BadgeContainer } from "@progress/kendo-react-indicators";
 import { SvgIcon } from "@progress/kendo-react-common";
 import { cartIcon } from "@progress/kendo-svg-icons";
+import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext"; // ✅ Import the hook instead
 
 const ShopCart = () => {
+  const { cart } = useCart(); // ✅ Use custom hook
+
   return (
     <div className="p-1 g-col-6 text-black">
-      <a href="" className="nav-icon">
+      <Link to="/cart" className="nav-icon">
         <BadgeContainer>
           <SvgIcon icon={cartIcon} size="large" />
-          <Badge className="badge-color">3</Badge>
+          {cart.length > 0 && <Badge className="badge-color">{cart.length}</Badge>}
         </BadgeContainer>
-      </a>
+      </Link>
     </div>
   );
-}
+};
 
-export default ShopCart
+export default ShopCart;

@@ -17,6 +17,9 @@ import ProductList from "./pages/ProductList";
 import ProductDetails from "./pages/ProductDetails";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
+import { CartProvider } from "./context/CartContext";
+import CartPage from "./pages/CartPage";
+import Checkout from "./pages/Checkout";
 
 
 function App() {
@@ -29,34 +32,38 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      {loading ? (
-        <PageLoader />
-      ) : (
-        <Router>
-        <Navbar />
-          <Routes>
-            <Route path="/" element={
-              <>
-              
-              <Hero />
-              <ChatWidget />
-              <Catalog />
-              <Action />
-              
-          
+    <CartProvider>
+      <div className="App">
+        {loading ? (
+          <PageLoader />
+        ) : (
+          <Router>
+          <Navbar />
+            <Routes>
+              <Route path="/" element={
+                <>
+                
+                <Hero />
+                <ChatWidget />
+                <Catalog />
+                <Action />
+                
             
-        </>} />
-            <Route path="/products" element={<ProductList />} />
-            <Route path="/products/:id" element={<ProductDetails />} />
-            <Route path="/about" element={<AboutUs   />} />
-            <Route path= '/contact' element={<ContactUs />} />
-          </Routes>
-        <Footer />  
-      </Router>
-        // 
-      )}
-    </div>
+              
+          </>} />
+              <Route path="/products" element={<ProductList />} />
+              <Route path="/products/:id" element={<ProductDetails />} />
+              <Route path="/about" element={<AboutUs   />} />
+              <Route path= '/contact' element={<ContactUs />} />
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="/checkout" element={<Checkout />} />
+            </Routes>
+          <Footer />  
+        </Router>
+          // 
+        )}
+      </div>
+    </CartProvider>
   );
 }
 

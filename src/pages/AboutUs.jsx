@@ -1,35 +1,39 @@
 import React from "react";
 import kiatu from '../assets/hero.png';
-
+import ShopButton from "../components/ShopButton";
 
 const AboutUs = () => {
   return (
-    <section className="container my-5">
+    <section className="container my-5 py-5">
       <div className="row align-items-center">
-        {/* Text Section */}
-        <div className="col-12 col-md-6">
-          <h2 className="text-success">About Us</h2>
-          <p className="text-muted">
-            Welcome to <strong>My Shoe Store</strong>, where style meets comfort. 
-            We believe that the right pair of shoes can make all the difference. 
-            Our mission is to provide high-quality, fashionable, and comfortable 
-            footwear for everyone.
-          </p>
-          <p className="text-muted">
-            Whether you're looking for casual sneakers, formal shoes, or sporty kicks, 
-            we've got you covered. Our collections are curated to bring you the best 
-            in both comfort and style.
-          </p>
-          <button className="btn btn-success">Explore Our Collection</button>
-        </div>
-
-        {/* Image Section */}
+        
         <div className="col-12 col-md-6 text-center">
           <img 
             src={kiatu} 
-            alt="Shoe Collection" 
-            className="img-fluid rounded"
+            alt="Premium Footwear Collection" 
+            className="img-fluid rounded shadow-lg"
           />
+        </div>
+
+     
+        <div className="col-12 col-md-6">
+          <h1 className="text-custom fw-bold">Step Into Comfort & Style</h1>
+          <p className="text-muted lead">
+            Welcome to <strong className="text-prim">iViatu</strong> – your go-to destination for high-quality footwear 
+            that blends fashion with function. We believe that every step you take should be a confident one.
+          </p>
+
+          <h4 className="mt-4 text-dark fw-semibold">Why Choose Us?</h4>
+          <ul className="list-unstyled text-muted">
+            <li>✔ Premium-quality materials for lasting comfort</li>
+            <li>✔ Trendy designs tailored for every occasion</li>
+            <li>✔ Affordable luxury with unbeatable durability</li>
+            <li>✔ Customer-first approach with hassle-free shopping</li>
+          </ul>
+
+          <div className="d-flex justify-content-center mt-4">
+            <ShopButton text="Shop Now" />
+          </div>
         </div>
       </div>
     </section>

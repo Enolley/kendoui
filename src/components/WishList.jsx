@@ -9,7 +9,7 @@ const WishList = () => {
       <a href="" className="nav-icon">
         <BadgeContainer>
           <SvgIcon icon={heartIcon} size="large"/>
-          <Badge className="badge-color">10</Badge>
+          <Badge className="badge-color"></Badge>
         </BadgeContainer>
       </a>
     </div>
