@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Notification, NotificationGroup } from "@progress/kendo-react-notification";
+import { Fade } from "@progress/kendo-react-animation";
+
 
 const Checkout = () => {
-  const { cart } = useCart(); // Get cart items
+  const { cart } = useCart(); 
   const [customerInfo, setCustomerInfo] = useState({
     name: "",
     email: "",
@@ -13,6 +15,7 @@ const Checkout = () => {
   });
 
   const [shipping, setShipping] = useState("Standard");
+  const [showNotification, setShowNotification] = useState(false);
   const shippingCost = shipping === "Standard" ? 0 : 12;
   const subtotal = cart.reduce((acc, item) => acc + item.price * (item.quantity || 1), 0);
   const vat = (subtotal * 0.2).toFixed(2);
@@ -27,22 +30,30 @@ const Checkout = () => {
       alert("Your cart is empty!");
       return;
     }
+
     console.log("Order Details:", { customerInfo, cart, shipping });
-    alert("Order placed successfully!");
+
+ 
+    setShowNotification(true);
+
+   
+    setTimeout(() => {
+      setShowNotification(false);
+    }, 3000);
   };
 
   return (
-    <div className="container mt-5
-    ">
+    <div className="container mt-5">
       <h2 className="mb-4">Checkout</h2>
 
       {cart.length === 0 ? (
-        <p>Your cart is empty. <Link to="/products">Shop now</Link></p>
+        <p>
+          Your cart is empty. <Link to="/products">Shop now</Link>
+        </p>
       ) : (
-        <div className="row d-flex flex-column flex-md-row   justify-content-center gap-3">
-          
-          {/* Order Summary */}
-          <div className="col-12 col-md-6">
+        <div className="row">
+        
+          <div className="w-50">
             <div className="card p-4 shadow-sm">
               <h4>Order Summary</h4>
               <ul className="list-group mb-3">
@@ -50,8 +61,6 @@ const Checkout = () => {
                   <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
                     <div>
                       <p className="mb-1 fw-semibold text-prim">{item.name}</p>
-                      <img src={item.image} alt={item.name} className="me-3" style={{ width: "50px", height: "50px", objectFit: "cover", borderRadius: "5px" }} />
-                      
                       <p className="text-muted text-custom">Qty: {item.quantity || 1}</p>
                     </div>
                     <strong>${(item.price * (item.quantity || 1)).toFixed(2)}</strong>
@@ -59,16 +68,28 @@ const Checkout = () => {
                 ))}
               </ul>
 
+              
               <h5>Shipping Method</h5>
               <div className="form-check">
-                <input className="form-check-input" type="radio" checked={shipping === "Standard"} onChange={() => setShipping("Standard")} />
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  checked={shipping === "Standard"}
+                  onChange={() => setShipping("Standard")}
+                />
                 <label className="form-check-label">Standard (Free)</label>
               </div>
               <div className="form-check">
-                <input className="form-check-input" type="radio" checked={shipping === "Express"} onChange={() => setShipping("Express")} />
+                <input
+                  className="form-check-input"
+                  type="radio"
+                  checked={shipping === "Express"}
+                  onChange={() => setShipping("Express")}
+                />
                 <label className="form-check-label">Express - $12.00</label>
               </div>
 
+              
               <div className="mt-4">
                 <div className="d-flex justify-content-between text-custom">
                   <span>Subtotal:</span>
@@ -86,8 +107,8 @@ const Checkout = () => {
             </div>
           </div>
 
-          {/* Customer Information */}
-          <div className="col-12 col-md-6">
+         
+          <div className="w-50 h-100">
             <div className="card p-4 shadow-sm">
               <h4>Customer Information</h4>
               <form>
@@ -119,6 +140,21 @@ const Checkout = () => {
           </div>
         </div>
       )}
+
+     
+      <NotificationGroup style={{ position: "fixed", top: 20, right: 20, zIndex: 1000 }}>
+        <Fade>
+          {showNotification && (
+            <Notification
+              type={{ style: "success", icon: true }}
+              closable={true}
+              onClose={() => setShowNotification(false)}
+            >
+              <span>Order placed successfully!</span>
+            </Notification>
+          )}
+        </Fade>
+      </NotificationGroup>
     </div>
   );
 };

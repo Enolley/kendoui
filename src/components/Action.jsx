@@ -10,7 +10,7 @@ const Action = () => {
     <h2 className="fs-4 fw-semibold mb-3">
       New Arrivals Just Landed
     </h2>
-    <div className="mt-3 d-flex justify-content-center">
+    <div className="mt-3 btn-center-md">
       <ShopButton  text="Shop Now"/>
     </div>
   </div>

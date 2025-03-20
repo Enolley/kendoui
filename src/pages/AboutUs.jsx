@@ -23,7 +23,7 @@ const AboutUs = () => {
             that blends fashion with function. We believe that every step you take should be a confident one.
           </p>
 
-          <h4 className="mt-4 text-dark fw-semibold">Why Choose Us?</h4>
+          <h4 className="mt-4 text-custom fw-semibold">Why Choose Us?</h4>
           <ul className="list-unstyled text-muted">
             <li>✔ Premium-quality materials for lasting comfort</li>
             <li>✔ Trendy designs tailored for every occasion</li>
