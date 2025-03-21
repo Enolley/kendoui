@@ -1,4 +1,9 @@
 # Getting Started with Create React App
+# Start by installing these packages
+
+These packages will support the chat interaction Functionality. Copy and paste the command below in your terminal.
+
+### `npm install axios openai dotenv`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
