@@ -43,16 +43,10 @@ const CartPage = () => {
                 </div>
 
                 <div>
-                  <button
-                    className="btn btn-sm btn-warning me-2"
-                    onClick={() => decreaseQuantity(item.id)}
-                  >
+                  {/* <button className="btn btn-sm btn-warning me-2" onClick={() => decreaseQuantity(item.id)}>
                     -
-                  </button>
-                  <button
-                    className="btn btn-sm btn-danger"
-                    onClick={() => removeFromCart(item.id)}
-                  >
+                  </button> */}
+                  <button className="btn btn-sm btn-danger" onClick={() => removeFromCart(item.id)}>
                     Remove
                   </button>
                 </div>
