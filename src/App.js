@@ -20,6 +20,7 @@ import ContactUs from "./pages/ContactUs";
 import { CartProvider } from "./context/CartContext";
 import CartPage from "./pages/CartPage";
 import Checkout from "./pages/Checkout";
+import Wishlist from "./pages/Wishlist";
 
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
               <Route path= '/contact' element={<ContactUs />} />
               <Route path="/cart" element={<CartPage />} />
               <Route path="/checkout" element={<Checkout />} />
+              <Route path="/wishlist" element={<Wishlist  />} />
             </Routes>
           <Footer />  
         </Router>

@@ -4,6 +4,9 @@ import { db } from "../config/firebase";
 import { collection, getDocs } from "firebase/firestore";
 import { Card, CardBody } from "@progress/kendo-react-layout";
 import { Skeleton } from "@progress/kendo-react-indicators";
+import { SvgIcon } from "@progress/kendo-react-common";
+import { heartIcon } from "@progress/kendo-svg-icons";
+import { Badge, BadgeContainer } from "@progress/kendo-react-indicators";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -29,6 +32,15 @@ const ProductList = () => {
     
   }, []);
   console.log("Products:", products);
+  const addToWishlist = (product) => {
+    const savedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    const isAlreadyInWishlist = savedWishlist.some((item) => item.id === product.id);
+  
+    if (!isAlreadyInWishlist) {
+      const updatedWishlist = [...savedWishlist, product];
+      localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+    }
+  };
 
   return (
     <div className="container mt-5">
@@ -62,6 +74,14 @@ const ProductList = () => {
                     <Link to={`/products/${product.id}`} className="btn btn-custom-blue">
                       View Details
                     </Link>
+                    <button className="btn  mt-2" onClick={() => addToWishlist(product)}>
+                    <BadgeContainer>
+                      <SvgIcon icon={heartIcon} size="xxxlarge" 
+                      className="text-prim"/>
+          
+        </BadgeContainer>
+                   
+                  </button>
                   </CardBody>
                 </Card>
               </div>
