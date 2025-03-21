@@ -65,18 +65,29 @@ function ChatAI() {
 
   return (
     <div className="container mt-7 p-3">
-      <h2 className="text-center">IVIATU Assistant</h2>
+      <h2 className="text-center text-pink">iViatu Assistant</h2>
 
       {/* Chat Box */}
-      <div 
+      <div
         ref={chatBoxRef}
-        className="chat-box border rounded p-3 mb-3" 
+        className="chat-box border rounded p-3 mb-3"
         style={{ height: "400px", overflowY: "auto", background: "#f8f9fa" }}
       >
         {messages.map((msg, index) => (
-          <div key={index} className={`d-flex ${msg.sender === "user" ? "justify-content-end" : "justify-content-start"}`}>
+          <div
+            key={index}
+            className={`d-flex ${
+              msg.sender === "user"
+                ? "justify-content-end"
+                : "justify-content-start"
+            }`}
+          >
             <div
-              className={`p-2 rounded mb-2 ${msg.sender === "user" ? "bg-pink text-white" : "bg-blue text-white"}`}
+              className={`p-2 rounded mb-2 ${
+                msg.sender === "user"
+                  ? "bg-pink text-white"
+                  : "bg-blue text-white"
+              }`}
               style={{ maxWidth: "75%" }}
             >
               {msg.text}
@@ -85,7 +96,10 @@ function ChatAI() {
         ))}
         {isLoading && (
           <div className="d-flex justify-content-start">
-            <div className="p-2 rounded mb-2 bg-light" style={{ maxWidth: "75%" }}>
+            <div
+              className="p-2 rounded mb-2 bg-light"
+              style={{ maxWidth: "75%" }}
+            >
               <div className="typing-indicator">
                 <span></span>
                 <span></span>
@@ -99,14 +113,14 @@ function ChatAI() {
       <div className="d-flex">
         <Input
           type="text"
-          className="form-control me-2"
+          className="form-control me-2 message-input"
           placeholder="Ask about our shoes..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyPress={handleKeyPress}
           disabled={isLoading}
         />
-        <Button 
+        <Button
           className="btn btn-custom text-white"
           onClick={handleSendMessage}
           disabled={isLoading || input.trim() === ""}
@@ -136,8 +150,14 @@ function ChatAI() {
           animation-delay: 0.4s;
         }
         @keyframes bounce {
-          0%, 80%, 100% { transform: translateY(0); }
-          40% { transform: translateY(-8px); }
+          0%,
+          80%,
+          100% {
+            transform: translateY(0);
+          }
+          40% {
+            transform: translateY(-8px);
+          }
         }
       `}</style>
     </div>
