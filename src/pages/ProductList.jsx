@@ -44,7 +44,7 @@ const ProductList = () => {
 
   return (
     <div className="container mt-5">
-      <h2 className="text-center mb-4">Shop Our Latest Shoes</h2>
+      <h2 className="text-center mb-4 text-pink">Shop Our Latest Shoes</h2>
       <div className="row">
         {loading
           ? Array.from({ length: 6 }).map((_, index) => (
@@ -69,8 +69,8 @@ const ProductList = () => {
                     style={{ height: 200, objectFit: "cover" }}
                   />
                   <CardBody className="text-center">
-                    <h5 className="card-title">{product.name}</h5>
-                    <p className="card-text">${product.price}</p>
+                    <h5 className="card-title text-blue">{product.name}</h5>
+                    <p className="card-text text-pink">${product.price}</p>
                     <Link to={`/products/${product.id}`} className="btn btn-custom-blue">
                       View Details
                     </Link>

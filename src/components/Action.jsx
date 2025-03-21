@@ -1,4 +1,3 @@
-import { Button } from '@progress/kendo-react-buttons'
 import React from 'react'
 import ShopButton from "./ShopButton";
 

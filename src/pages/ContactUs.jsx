@@ -21,9 +21,9 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center vh-100">
+    <div className="container d-flex justify-content-center align-items-center my-3">
       <div className="card p-4 shadow-lg w-75" style={{ maxWidth: "600px" }}>
-        <h2 className="text-success text-center mb-4">Contact Us</h2>
+        <h2 className="text-pink text-center mb-4">Contact Us</h2>
 
         <form onSubmit={handleSubmit}>
           {/* Name Field */}

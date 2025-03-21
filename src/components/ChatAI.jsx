@@ -7,7 +7,7 @@ import { Button } from "@progress/kendo-react-buttons";
 
 function ChatAI() {
   // Dummy messages for UI
-  const [messages, setMessages] = useState([
+  const [messages] = useState([
     { text: "Hello! How can I assist you today?", sender: "bot" },
     { text: "What are the latest sneaker trends?", sender: "user" },
     { text: "The latest trends include chunky soles and retro designs!", sender: "bot" },

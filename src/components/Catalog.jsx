@@ -41,7 +41,7 @@ const Catalog = () => {
               onMouseLeave={() => setHoveredCard(null)}
             >
               <CardBody>
-                <span className="text-right text-warning font-weight-bold">{product.discount}</span>
+                <span className="text-right bg-warning font-weight-bold text-light discount">{product.discount}</span>
                 <img
                   src={product.image}
                   className="card-img-top"
