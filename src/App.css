@@ -234,3 +234,9 @@
   align-items: center !important;
   
 }
+.wishlist{
+  color: #ff0000;
+}
+.wishlist:hover{
+  color: #ff1053;
+}
