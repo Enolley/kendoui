@@ -9,7 +9,7 @@ const ShopButton = ({ text }) => {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center w-100 mt-3">
+    <div className="w-100 mt-3">
       <Button className="btn btn-custom text-center" onClick={ToShop}>
         {text}
       </Button>

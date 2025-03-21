@@ -57,21 +57,31 @@ const ProductDetails = () => {
     <div className="container mt-5">
       <div className="row">
         <div className="col-md-6">
-          <img 
-            src={product.image || "/placeholder.jpg"} 
-            alt={product.name} 
-            className="img-fluid rounded shadow" 
+          <img
+            src={product.image || "/placeholder.jpg"}
+            alt={product.name}
+            className="img-fluid rounded shadow"
           />
         </div>
-        <div className="col-md-6">
-          <h1 className="text-prim">{product.name}</h1>
-          <p className="text-muted">{product.description}</p>
-          <h3 className="text-success">${product.price}</h3>
-          <button className="btn btn-custom-blue mt-3" onClick={handleAddToCart} ref={anchorRef}>
-          Add To Cart <SvgIcon icon={cartIcon} size="large" />
-          </button>
-          
-          <Popup show={showPopup} anchor={anchorRef.current} popupClass="popup-style">
+        <div className="col-md-6 d-flex justify-content-center align-items-center">
+          <div>
+            <h1 className="text-prim">{product.name}</h1>
+            <p className="text-muted">{product.description}</p>
+            <h3 className="text-pink">${product.price}</h3>
+            <button
+              className="btn btn-custom-blue mt-3"
+              onClick={handleAddToCart}
+              ref={anchorRef}
+            >
+              Add To Cart <SvgIcon icon={cartIcon} size="large" />
+            </button>
+          </div>
+
+          <Popup
+            show={showPopup}
+            anchor={anchorRef.current}
+            popupClass="popup-style"
+          >
             <div className="alert alert-success">{popupMessage}</div>
           </Popup>
         </div>
