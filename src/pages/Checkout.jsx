@@ -43,32 +43,37 @@ const Checkout = () => {
   };
 
   return (
-    <div className="container mt-5">
-      <h2 className="mb-4">Checkout</h2>
+    <div className="container mt-5 min-vh-100">
+      <h2 className="mb-4 text-pink">Checkout</h2>
 
       {cart.length === 0 ? (
         <p>
-          Your cart is empty. <Link to="/products">Shop now</Link>
+          Your cart is empty. <Link to="/products" className="text-pink">Shop now</Link>
         </p>
       ) : (
         <div className="row">
-        
           <div className="w-50">
             <div className="card p-4 shadow-sm">
               <h4>Order Summary</h4>
               <ul className="list-group mb-3">
                 {cart.map((item, index) => (
-                  <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
+                  <li
+                    key={index}
+                    className="list-group-item d-flex justify-content-between align-items-center"
+                  >
                     <div>
                       <p className="mb-1 fw-semibold text-prim">{item.name}</p>
-                      <p className="text-muted text-custom">Qty: {item.quantity || 1}</p>
+                      <p className="text-muted text-custom">
+                        Qty: {item.quantity || 1}
+                      </p>
                     </div>
-                    <strong>${(item.price * (item.quantity || 1)).toFixed(2)}</strong>
+                    <strong>
+                      ${(item.price * (item.quantity || 1)).toFixed(2)}
+                    </strong>
                   </li>
                 ))}
               </ul>
 
-              
               <h5>Shipping Method</h5>
               <div className="form-check">
                 <input
@@ -89,7 +94,6 @@ const Checkout = () => {
                 <label className="form-check-label">Express - $12.00</label>
               </div>
 
-              
               <div className="mt-4">
                 <div className="d-flex justify-content-between text-custom">
                   <span>Subtotal:</span>
@@ -107,32 +111,59 @@ const Checkout = () => {
             </div>
           </div>
 
-         
           <div className="w-50 h-100">
             <div className="card p-4 shadow-sm">
               <h4>Customer Information</h4>
               <form>
                 <div className="mb-3">
                   <label className="form-label">Full Name</label>
-                  <input type="text" name="name" className="form-control" onChange={handleChange} required />
+                  <input
+                    type="text"
+                    name="name"
+                    className="form-control"
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
 
                 <div className="mb-3">
                   <label className="form-label">Email</label>
-                  <input type="email" name="email" className="form-control" onChange={handleChange} required />
+                  <input
+                    type="email"
+                    name="email"
+                    className="form-control"
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
 
                 <div className="mb-3">
                   <label className="form-label">Address</label>
-                  <input type="text" name="address" className="form-control" onChange={handleChange} required />
+                  <input
+                    type="text"
+                    name="address"
+                    className="form-control"
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
 
                 <div className="mb-3">
                   <label className="form-label">Phone</label>
-                  <input type="text" name="phone" className="form-control" onChange={handleChange} required />
+                  <input
+                    type="text"
+                    name="phone"
+                    className="form-control"
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
 
-                <button type="button" className="btn btn-custom-blue w-100 mt-3" onClick={handleCheckout}>
+                <button
+                  type="button"
+                  className="btn btn-custom-blue w-100 mt-3"
+                  onClick={handleCheckout}
+                >
                   Place Order - ${total}
                 </button>
               </form>
@@ -141,8 +172,9 @@ const Checkout = () => {
         </div>
       )}
 
-     
-      <NotificationGroup style={{ position: "fixed", top: 20, right: 20, zIndex: 1000 }}>
+      <NotificationGroup
+        style={{ position: "fixed", top: 20, right: 20, zIndex: 1000 }}
+      >
         <Fade>
           {showNotification && (
             <Notification
