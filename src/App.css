@@ -240,3 +240,22 @@
 .wishlist:hover{
   color: #ff1053;
 }
+
+.bg-pink{
+  background-color: #ff1053!important;
+}
+
+.bg-blue{
+  background-color: #114b5f!important;
+}
+
+.message-input{
+  border: 1px solid #ff1053!important;
+  color: #114b5f;
+}
+
+.widget:hover{
+  background: none!important;
+  border: 1px solid #ff1053!important;
+  color: #ff1053!important;
+}

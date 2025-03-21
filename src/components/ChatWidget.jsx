@@ -11,7 +11,7 @@ function ChatWidget() {
     <>
    
       <Button
-        className="position-fixed bottom-3 end-3 p-3 rounded-circle shadow bg-custom text-white "
+        className="position-fixed bottom-3 end-3 p-3 rounded-circle shadow bg-custom text-white widget "
         style={{ bottom: "20px", right: "20px", zIndex: 1000 }}
         onClick={() => setIsOpen(!isOpen)}
       >

@@ -17,14 +17,14 @@ function ChatAI() {
 
   return (
     <div className="container mt-7 p-3">
-      <h2 className="text-center">ChatAI</h2>
+      <h2 className="text-center text-pink">Talk To Me</h2>
 
       {/* Chat Box */}
       <div className="chat-box border rounded p-3 mb-3" style={{ height: "400px", overflowY: "auto", background: "#f8f9fa" }}>
         {messages.map((msg, index) => (
           <div key={index} className={`d-flex ${msg.sender === "user" ? "justify-content-end" : "justify-content-start"}`}>
             <div
-              className={`p-2 rounded mb-2 ${msg.sender === "user" ? "bg-primary text-white" : "bg-light"}`}
+              className={`p-2 rounded mb-2 ${msg.sender === "user" ? "bg-pink text-white" : "bg-blue text-white"}`}
               style={{ maxWidth: "75%" }}
             >
               {msg.text}
@@ -37,12 +37,12 @@ function ChatAI() {
       <div className="d-flex">
         <Input
           type="text"
-          className="form-control me-2"
+          className="form-control me-2 message-input"
           placeholder="Type a message..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <Button className="btn bg-white">
+        <Button className="btn btn-custom text-white">
          <SvgIcon icon={flipVerticalIcon} size="medium" />
         </Button>
       </div>
