@@ -21,6 +21,7 @@ import Checkout from "./pages/Checkout";
 import Wishlist from "./pages/Wishlist";
 import ChatAI from "./components/ChatAI";
 
+
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -43,7 +44,7 @@ function App() {
                 <Route path="/" element={
                   <>
                   <Hero />
-                  <ChatWidget />
+                  
                   <Catalog />
                   <Action />
                 </>} />
@@ -56,8 +57,10 @@ function App() {
                 <Route path="/wishlist" element={<Wishlist />} />
                 <Route path="/chat" element={<ChatAI />} />
               </Routes>
+              <ChatWidget />
               <Footer />  
             </Router>
+            
           )}
         </div>
       </CartProvider>
