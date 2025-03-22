@@ -2,12 +2,13 @@
 import OpenAI from "openai";
 
 // Replace with your actual OpenAI API key - in a real app, use environment variables
-const OPENAI_API_KEY = "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";
+const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
 
 const openai = new OpenAI({
   apiKey: OPENAI_API_KEY,
   dangerouslyAllowBrowser: true,
 });
+//const openai = new OpenAI({ apiKey: process.env.REACT_APP_OPENAI_API_KEY });
 
 // Format product data for the OpenAI prompt
 const formatProductsForPrompt = (products) => {
